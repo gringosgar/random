@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset=”UTF-8”>
+    <meta name=”viewport” content=”width=device-width, initial-scale=1.0”>
+    <title>Text</title>
+      <style type=”text/css”>
+
+body {
+
+  background-color: #0b1200 ;
+
+text-align: center;
+align-content: center;
+font:  Inconsolata, monospace;
+}
+
+ textarea {
+   background-color: #001f00;
+   color: yellow;
+border: 2px solid #006400;
+  border-radius: 4px;
+ 
+           
+}   
+
+ .button3 {
+  background-color: #003300;
+  border: 1px solid#006400;
+  color: lime;
+  padding: 4px 4px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin: 2px 2px;
+  cursor: pointer;
+ border-radius: 4px;
+
+}.button3:hover {
+  background-color: #3e8e41;
+border-radius: 2px;
+  color: red;
+}  
+
+</style> 
+
+
+
+
+
+<!-- hi. -->
+
+  </head>
+  <body>
+
+<br>
+<textarea id="myTextarea" rows="10" cols="85"> </textarea>
+
+   <br>
+ <button onclick=”myLoad()” class=” button3”>Load from localStorage</button>
+
+<button onclick="mySave()" class=" button3">Save to localStorage</button>
+
+  <button onclick=”deleteItems()” class=” button3”>Delete localStorage</button>
+
+<script>
+  function mySave() {
+    var myContent = document.getElementById("myTextarea").value;
+    localStorage.setItem("myContent", myContent);
+  }
+  function myLoad() {
+    var myContent = localStorage.getItem("myContent");
+    document.getElementById("myTextarea").value = myContent;
+  }
+
+ function deleteItems() {
+  localStorage.clear(“myContent”);
+}
+    </script>
+
+  </body>
+</html>
